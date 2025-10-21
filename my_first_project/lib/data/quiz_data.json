@@ -1,0 +1,16 @@
+{
+    "questions": [
+        {
+            "title": "Capital of Cambodia?",
+            "choices": ["Paris", "Phnom Penh", "Rome"],
+            "goodChoice": "Phnom Penh",
+            "point": 20
+        },
+        {
+            "title": "2 + 2 = ?",
+            "choices": ["2", "4", "5"],
+            "goodChoice": "4",
+            "point": 5
+        }
+    ]
+}

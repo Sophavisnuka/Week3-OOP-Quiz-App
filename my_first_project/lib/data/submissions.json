@@ -1,0 +1,36 @@
+{
+  "submissions": [
+    {
+      "playerName": "nuka",
+      "scorePercentage": 50,
+      "totalPoint": 5,
+      "answers": [
+        {
+          "questionId": "61e0ec7e-fe19-44ff-b2af-9ca27d49d6cf",
+          "answerChoice": "Paris"
+        },
+        {
+          "questionId": "bdb96a67-d4e7-462e-8ceb-50b36ed6bc1b",
+          "answerChoice": "4"
+        }
+      ],
+      "timestamp": "2025-10-21T20:26:18.518726"
+    },
+    {
+      "playerName": "Hello",
+      "scorePercentage": 50,
+      "totalPoint": 5,
+      "answers": [
+        {
+          "questionId": "61e0ec7e-fe19-44ff-b2af-9ca27d49d6cf",
+          "answerChoice": "Paris"
+        },
+        {
+          "questionId": "bdb96a67-d4e7-462e-8ceb-50b36ed6bc1b",
+          "answerChoice": "4"
+        }
+      ],
+      "timestamp": "2025-10-21T20:26:25.074494"
+    }
+  ]
+}
