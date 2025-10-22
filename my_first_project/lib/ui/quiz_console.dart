@@ -40,7 +40,7 @@ class QuizConsole {
       }
 
       // pass the quiz instance to isGood()
-      int score = quiz.getScoreInPercentage();
+      double score = quiz.getScoreInPercentage();
       int point = quiz.getPoint();
 
       // Add player
@@ -55,12 +55,14 @@ class QuizConsole {
       print('$nameInput, your score: $score% correct');
       print('$nameInput, your point is: $point\n');
 
-      repo.saveSubmission(
+      final submission = Submission(
         playerName: nameInput,
-        answers: quiz.answers,
         scorePercentage: score,
         totalPoint: point,
+        answers: List.from(quiz.answers),
       );
+
+      repo.saveSubmission(submission);
 
       quiz.answers.clear(); // Clear answers for next player
     }

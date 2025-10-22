@@ -14,7 +14,7 @@ class Question {
     required this.choices,
     required this.goodChoice,
     this.point = 1,
-  }) : id = id ?? uuid.v4(); //generates unique id
+  }) : id = uuid.v4(); //generates unique id
 }
 
 class Answer {
@@ -65,15 +65,15 @@ class Quiz {
     this.players[player.name] = player;
   }
 
-  int getScoreInPercentage(){
-    int totalScore =0;
+  double getScoreInPercentage(){
+    int totalScore = 0;
     for(Answer answer in answers){
       final question = getQuestionById(answer.questionId);
       if (question != null && answer.answerChoice == question.goodChoice) {
         totalScore++;
       }
     }
-    return ((totalScore/ questions.length)*100).toInt();
+    return ((totalScore / questions.length)*100);
   }
   int getPoint() {
     int totalPoint = 0;
@@ -98,10 +98,35 @@ class Quiz {
     });
   }
 }
-
 class Player {
   final String name;
   int score;
-  int scorePercentage;
+  double scorePercentage;
   Player({required this.name, this.score = 0, this.scorePercentage = 0});
 }
+
+class Submission {
+  final String playerName;
+  final double scorePercentage;
+  final int totalPoint;
+  final List<Answer> answers;
+
+  Submission({
+    required this.playerName,
+    required this.scorePercentage,
+    required this.totalPoint,
+    required this.answers,
+  });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'playerName': playerName,
+      'scorePercentage': scorePercentage,
+      'totalPoint': totalPoint,
+      'answers': answers.map((a) => {
+        'questionId': a.questionId,
+        'answerChoice': a.answerChoice,
+      }).toList(),
+    };
+  }
+} 

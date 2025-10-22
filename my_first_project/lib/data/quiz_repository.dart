@@ -33,50 +33,32 @@ class QuizRepository {
     return Quiz(questions: questions);
   }
 
-  void saveSubmission({required String playerName, required List<Answer> answers, required int scorePercentage, required int totalPoint}) {
+  void saveSubmission(Submission submission) {
     final submissionFile = File('lib/data/submissions.json');
 
-    //Create file if not exists
+    // Create file if not exists
     if (!submissionFile.existsSync()) {
-      submissionFile.writeAsStringSync(jsonEncode({'submissions': []}));
+      submissionFile.writeAsStringSync('{"submissions": []}');
     }
 
-    //Read file safely
-    final content = submissionFile.readAsStringSync();
-
+    String content = submissionFile.readAsStringSync();
     Map<String, dynamic> data;
     if (content.trim().isEmpty) {
-      // If file empty
-      data = {'submissions': []};
+      data = {"submissions": []};
     } else {
       data = jsonDecode(content);
     }
-
-    //Make sure there's always a list
+   // Get the existing submissions (if any)
     List submissionsList = data['submissions'] ?? [];
 
-    // Convert answers to map form
-    final answerList = answers.map((a) => {
-      'questionId': a.questionId,
-      'answerChoice': a.answerChoice,
-    }).toList();
-
-    // New entry
-    final newEntry = {
-      'playerName': playerName,
-      'scorePercentage': scorePercentage,
-      'totalPoint': totalPoint,
-      'answers': answerList,
-      'timestamp': DateTime.now().toIso8601String(),
-    };
-
-    submissionsList.add(newEntry);
+    //Use the model's toJson() method
+    submissionsList.add(submission.toJson());
     data['submissions'] = submissionsList;
 
-    //Write back to JSON
+    // Write back with pretty print
     const encoder = JsonEncoder.withIndent('  ');
     submissionFile.writeAsStringSync(encoder.convert(data), flush: true);
-    
-    print('Saved submission for $playerName to submissions.json');
+
+    print('Saved submission for ${submission.playerName}');
   }
 }

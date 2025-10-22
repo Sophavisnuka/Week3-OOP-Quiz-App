@@ -2,35 +2,41 @@
   "submissions": [
     {
       "playerName": "nuka",
-      "scorePercentage": 50,
-      "totalPoint": 5,
+      "scorePercentage": 33.33333333333333,
+      "totalPoint": 20,
       "answers": [
         {
-          "questionId": "61e0ec7e-fe19-44ff-b2af-9ca27d49d6cf",
-          "answerChoice": "Paris"
+          "questionId": "8a32a452-24f2-4a57-9320-b3c2ddf9c552",
+          "answerChoice": "Phnom Penh"
         },
         {
-          "questionId": "bdb96a67-d4e7-462e-8ceb-50b36ed6bc1b",
-          "answerChoice": "4"
+          "questionId": "7a5699a8-90c8-4fb4-a778-bbd21112df59",
+          "answerChoice": "1"
+        },
+        {
+          "questionId": "7cb30daf-e673-4caa-a070-acee0b9bc2cb",
+          "answerChoice": "2"
         }
-      ],
-      "timestamp": "2025-10-21T20:26:18.518726"
+      ]
     },
     {
       "playerName": "Hello",
-      "scorePercentage": 50,
-      "totalPoint": 5,
+      "scorePercentage": 66.66666666666666,
+      "totalPoint": 15,
       "answers": [
         {
-          "questionId": "61e0ec7e-fe19-44ff-b2af-9ca27d49d6cf",
-          "answerChoice": "Paris"
+          "questionId": "b76aec78-c845-49cb-8df6-bdf25b5be0ee",
+          "answerChoice": "4"
         },
         {
-          "questionId": "bdb96a67-d4e7-462e-8ceb-50b36ed6bc1b",
+          "questionId": "0c602587-0836-4cf5-babf-86ded6e443f2",
           "answerChoice": "4"
+        },
+        {
+          "questionId": "94473085-523f-4770-a0bf-489b80fa8f6e",
+          "answerChoice": "9"
         }
-      ],
-      "timestamp": "2025-10-21T20:26:25.074494"
+      ]
     }
   ]
 }

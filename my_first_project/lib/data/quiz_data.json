@@ -11,6 +11,12 @@
             "choices": ["2", "4", "5"],
             "goodChoice": "4",
             "point": 5
+        },
+        {
+            "title": "2 + 7 = ?",
+            "choices": ["2", "9", "5"],
+            "goodChoice": "9",
+            "point": 10
         }
     ]
 }
