@@ -38,7 +38,7 @@ class QuizRepository {
 
     // Create file if not exists
     if (!submissionFile.existsSync()) {
-      submissionFile.writeAsStringSync('{"submissions": []}');
+      throw new Exception('Submission.json file not found');
     }
 
     String content = submissionFile.readAsStringSync();
