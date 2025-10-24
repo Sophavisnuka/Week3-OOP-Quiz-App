@@ -91,7 +91,6 @@ class Quiz {
       print('No players participated.');
       return;
     }
-    
     print('\n=== Final Scores (Latest Attempts) ===');
     players.forEach((name, player) {
       print('$name: ${player.scorePercentage}% (${player.score} points)');
@@ -102,27 +101,34 @@ class Player {
   final String name;
   int score;
   double scorePercentage;
-  Player({required this.name, this.score = 0, this.scorePercentage = 0});
+  
+  Player({
+    required this.name,
+    this.score = 0, 
+    this.scorePercentage = 0
+  });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'score': score,
+      'scorePercentage': scorePercentage,
+    };
+  }
 }
 
 class Submission {
-  final String playerName;
-  final double scorePercentage;
-  final int totalPoint;
+  final List<Player> players;
   final List<Answer> answers;
 
   Submission({
-    required this.playerName,
-    required this.scorePercentage,
-    required this.totalPoint,
+    required this.players,
     required this.answers,
   });
 
   Map<String, dynamic> toJson() {
     return {
-      'playerName': playerName,
-      'scorePercentage': scorePercentage,
-      'totalPoint': totalPoint,
+      'players': players.map((p) => p.toJson()).toList(),
       'answers': answers.map((a) => {
         'questionId': a.questionId,
         'answerChoice': a.answerChoice,

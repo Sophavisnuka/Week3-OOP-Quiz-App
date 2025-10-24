@@ -56,9 +56,7 @@ class QuizConsole {
       print('$nameInput, your point is: $point\n');
 
       final submission = Submission(
-        playerName: nameInput,
-        scorePercentage: score,
-        totalPoint: point,
+        players: [player], // Use the player object we already created
         answers: List.from(quiz.answers),
       );
 
